@@ -1,1 +1,1 @@
-(()=>{const e=document.querySelector("#root"),t=React.createElement("div",{className:"greeting"},React.createElement("div",{className:"greeting__title"},"Hello, world!"),React.createElement("div",{className:"greeting__text"},"I'm learning React"));ReactDOM.render(t,e)})();
+(()=>{const e=document.querySelector("#root"),t=React.createElement("div",{class:"greeting"},React.createElement("div",{class:"greeting__title"},"Hello, world!"),React.createElement("div",{class:"greeting__text"},"I'm learning React"));ReactDOM.render(t,e)})();
