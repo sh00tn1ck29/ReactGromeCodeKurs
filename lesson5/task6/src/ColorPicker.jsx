@@ -24,20 +24,20 @@ class ColorPicker extends Component {
   render() {
     return (
       <div>
-        <div class="picker__title">{this.state.color}</div>
+        <div className="picker__title">{this.state.color}</div>
         <div>
           <button
-            class="picker__button picker__button_coral"
+            className="picker__button picker__button_coral"
             onMouseEnter={() => this.colorFunc('Coral')}
             onMouseLeave={() => this.clearFunc()}
           ></button>
           <button
-            class="picker__button picker__button_aqua"
+            className="picker__button picker__button_aqua"
             onMouseEnter={() => this.colorFunc('Aqua')}
             onMouseLeave={() => this.clearFunc()}
           ></button>
           <button
-            class="picker__button picker__button_bisque"
+            className="picker__button picker__button_bisque"
             onMouseEnter={() => this.colorFunc('Bisque')}
             onMouseLeave={() => this.clearFunc()}
           ></button>
