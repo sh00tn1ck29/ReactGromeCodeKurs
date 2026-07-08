@@ -6,7 +6,9 @@ const Page = () => {
 
   return (
     <div className="page">
-      <Info info={productInfo} />
+      <div className="text">
+        <Info info={productInfo} />
+      </div>
       <div className="actions">
         <button
           className="btn"
