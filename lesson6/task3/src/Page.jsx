@@ -10,14 +10,11 @@ const Page = () => {
       <div className="actions">
         <button
           className="btn"
-          onClick={() => setProductInfo('iPhone 13 - Price is 500$. Available in 2 colors;')}
+          onClick={() => setProductInfo('Price is 500$. Available in 2 colors')}
         >
           IPhone 13
         </button>
-        <button
-          className="btn"
-          onClick={() => setProductInfo('iPhone 13 Pro - Price is 650$. Not available.')}
-        >
+        <button className="btn" onClick={() => setProductInfo('Price is 650$. Not available')}>
           IPhone 13 Pro
         </button>
         <button className="btn" onClick={() => setProductInfo('')}>
