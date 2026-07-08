@@ -10,7 +10,7 @@ const Page = () => {
       <div className="actions">
         <button
           className="btn"
-          onClick={() => setProductInfo('Price is 500$Available in 2 colors')}
+          onClick={() => setProductInfo('Price is 500$.Available in 2 colors')}
         >
           IPhone 13
         </button>
