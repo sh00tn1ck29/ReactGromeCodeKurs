@@ -5,7 +5,7 @@ const Info = ({ info }) => {
     return null;
   }
 
-  return <div className="message">{info}</div>;
+  return <div className="info message">{info}</div>;
 };
 
 export default Info;
