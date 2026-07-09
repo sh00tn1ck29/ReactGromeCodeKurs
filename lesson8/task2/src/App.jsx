@@ -4,7 +4,6 @@ import Clock from './Clock';
 class App extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       visible: true,
     };
@@ -19,7 +18,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <button onClick={this.toggleVisibility}>Toggle Clocks</button>
+        <button onClick={this.toggleVisibility}>Toggle</button>
         {this.state.visible && (
           <div>
             <Clock location="London" offset={0} />
@@ -31,4 +30,5 @@ class App extends Component {
     );
   }
 }
+
 export default App;
