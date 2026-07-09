@@ -24,7 +24,7 @@ class Life extends Component {
   }
 
   render() {
-    console.log('render(): return React element to build DOM');
+    console.log('return React element to build DOM');
     return (
       <div className="clock">
         <div className="clock__location">New York</div>
