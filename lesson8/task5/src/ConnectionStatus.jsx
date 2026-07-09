@@ -31,10 +31,10 @@ class ConnectionStatus extends Component {
     const { isOnline } = this.state;
 
     if (!isOnline) {
-      return <div className="status status_offline">Offline</div>;
+      return <div className="status status_offline">offline</div>;
     }
 
-    return <div className="status">Online</div>;
+    return <div className="status">online</div>;
   }
 }
 
