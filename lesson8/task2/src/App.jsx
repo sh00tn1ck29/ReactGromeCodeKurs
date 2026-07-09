@@ -21,9 +21,9 @@ class App extends Component {
         <button onClick={this.toggleVisibility}>Toggle</button>
         {this.state.visible && (
           <div>
-            <Clock location="London" offset={0} />
-            <Clock location="Kyiv" offset={2} />
             <Clock location="New York" offset={-5} />
+            <Clock location="Kyiv" offset={2} />
+            <Clock location="London" offset={0} />
           </div>
         )}
       </div>
