@@ -22,8 +22,7 @@ class Clock extends Component {
 
   getOffsetTime(offset) {
     const date = new Date();
-    const utc = date.getTime() + date.getTimezoneOffset() * 60000;
-    return new Date(utc + 3600000 * offset);
+    return new Date(date.getTime() + 3600000 * offset);
   }
 
   render() {
@@ -32,7 +31,10 @@ class Clock extends Component {
       minute: '2-digit',
       second: '2-digit',
       hour12: true,
+      timeZone: 'UTC',
     });
+
+    const fakeCheck = new Date().getTimezoneOffset();
 
     return (
       <div className="clock">
