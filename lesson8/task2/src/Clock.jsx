@@ -27,12 +27,16 @@ class Clock extends Component {
   }
 
   render() {
-    const formattedTime = this.state.time.toLocaleTimeString('en-US', {
-      hour: 'numeric',
-      minute: '2-digit',
-      second: '2-digit',
-      hour12: true,
-    });
+    const date = this.state.time;
+    let hours = date.getHours();
+    const minutes = String(date.getMinutes()).padStart(2, '0');
+    const seconds = String(date.getSeconds()).padStart(2, '0');
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+
+    hours = hours % 12;
+    hours = hours ? hours : 12;
+
+    const formattedTime = `${hours}:${minutes}:${seconds} ${ampm}`;
 
     return (
       <div className="clock">
