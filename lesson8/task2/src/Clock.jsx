@@ -3,8 +3,9 @@ import React, { Component } from 'react';
 class Clock extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      time: this.getOffsetTime(this.props.offset),
+      time: this.getOffsetTime(props.offset),
     };
   }
 
@@ -21,13 +22,15 @@ class Clock extends Component {
   }
 
   getOffsetTime(offset) {
-    const date = new Date();
-    const utc = date.getTime() + date.getTimezoneOffset() * 60000;
-    return new Date(utc + 3600000 * offset);
+    const now = new Date();
+    const utc = now.getTime() + now.getTimezoneOffset() * 60000;
+
+    return new Date(utc + offset * 60 * 60 * 1000);
   }
 
   render() {
     const formattedTime = this.state.time.toLocaleTimeString('en-US', {
+      timeZone: 'UTC',
       hour: 'numeric',
       minute: '2-digit',
       second: '2-digit',
