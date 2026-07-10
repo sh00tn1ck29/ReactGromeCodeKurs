@@ -11,6 +11,10 @@ class Search extends Component {
     });
   };
 
+  handleclick = () => {
+    alert(`${this.state.value}`);
+  };
+
   render() {
     return (
       <form className="search">
@@ -20,7 +24,9 @@ class Search extends Component {
           class="search__input"
           value={this.state.value}
         />
-        <button className="search__button">Search</button>
+        <button className="search__button" onClick={this.handleclick}>
+          Search
+        </button>
       </form>
     );
   }
