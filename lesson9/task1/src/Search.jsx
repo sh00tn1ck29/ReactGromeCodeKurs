@@ -11,7 +11,8 @@ class Search extends Component {
     });
   };
 
-  handleclick = () => {
+  handleclick = event => {
+    event.preventDefault();
     alert(`${this.state.value}`);
   };
 
@@ -24,7 +25,9 @@ class Search extends Component {
           class="search__input"
           value={this.state.value}
         />
-        <button className="search__button">Search</button>
+        <button className="search__button" type="submit">
+          Search
+        </button>
       </form>
     );
   }
