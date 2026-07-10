@@ -5,14 +5,14 @@ class Clock extends Component {
     super(props);
 
     this.state = {
-      time: this.getOffsetTime(props.offset),
+      time: new Date(),
     };
   }
 
   componentDidMount() {
     this.interval = setInterval(() => {
       this.setState({
-        time: this.getOffsetTime(this.props.offset),
+        time: new Date(),
       });
     }, 1000);
   }
@@ -21,16 +21,14 @@ class Clock extends Component {
     clearInterval(this.interval);
   }
 
-  getOffsetTime(offset) {
-    const now = new Date();
-    const utc = now.getTime() + now.getTimezoneOffset() * 60000;
-
-    return new Date(utc + offset * 60 * 60 * 1000);
-  }
-
   render() {
-    const formattedTime = this.state.time.toLocaleTimeString('en-US', {
-      timeZone: 'UTC',
+    const { location, offset } = this.props;
+
+    const date = new Date(this.state.time);
+
+    date.setHours(date.getHours() + offset + date.getTimezoneOffset() / 60);
+
+    const formattedTime = date.toLocaleTimeString('en-US', {
       hour: 'numeric',
       minute: '2-digit',
       second: '2-digit',
@@ -39,7 +37,7 @@ class Clock extends Component {
 
     return (
       <div className="clock">
-        <div className="clock__location">{this.props.location}</div>
+        <div className="clock__location">{location}</div>
         <div className="clock__time">{formattedTime}</div>
       </div>
     );
