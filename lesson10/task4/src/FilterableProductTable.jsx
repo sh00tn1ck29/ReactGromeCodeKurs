@@ -27,12 +27,12 @@ class FilterableProductTable extends Component {
     });
 
     return (
-      <div>
+      <div style={{ padding: '20px', fontFamily: 'sans-serif' }}>
         <SearchBar
           filterText={filterText}
           inStockOnly={inStockOnly}
           onFilterTextChange={this.handleFilterTextChange}
-          onInStockChange={this.handleInStockChange}
+          onInStockOnlyChange={this.handleInStockChange}
         />
         <ProductTable products={filteredProducts} />
       </div>

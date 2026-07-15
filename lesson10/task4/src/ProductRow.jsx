@@ -1,15 +1,15 @@
 import React from 'react';
 
 const ProductRow = ({ product }) => {
-  const name = product.stocked ? (
-    <span>{product.name}</span>
-  ) : (
-    <span style={{ color: 'red' }}>{product.name}</span>
-  );
+  const { name, price, stocked } = product;
+
+  const displayName = stocked ? name : <span style={{ color: 'red' }}>{name}</span>;
+
   return (
-    <div>
-      {name} {product.price}
-    </div>
+    <tr>
+      <td>{displayName}</td>
+      <td>{price}</td>
+    </tr>
   );
 };
 
