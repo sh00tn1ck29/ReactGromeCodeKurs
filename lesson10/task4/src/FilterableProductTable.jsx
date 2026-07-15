@@ -9,21 +9,16 @@ class FilterableProductTable extends Component {
   };
 
   handleFilterTextChange = filterText => {
-    this.setState({
-      filterText: filterText,
-    });
+    this.setState({ filterText });
   };
 
   handleInStockChange = inStockOnly => {
-    this.setState({
-      inStockOnly: inStockOnly,
-    });
+    this.setState({ inStockOnly });
   };
 
   render() {
-    const products = this.props.products;
-    const filterText = this.state.filterText;
-    const inStockOnly = this.state.inStockOnly;
+    const { products } = this.props;
+    const { filterText, inStockOnly } = this.state;
 
     const filteredProducts = products.filter(product => {
       const nameMatches = product.name.toLowerCase().includes(filterText.toLowerCase());
