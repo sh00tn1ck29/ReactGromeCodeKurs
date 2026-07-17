@@ -21,7 +21,7 @@ class CreateTask extends Component {
     }
   };
 
-  handleKeyPress = e => {
+  handleKeyDown = e => {
     if (e.key === 'Enter') {
       this.handleCreate();
     }
@@ -37,7 +37,7 @@ class CreateTask extends Component {
           type="text"
           value={inputValue}
           onChange={this.handleInputChange}
-          onKeyPress={this.handleKeyPress}
+          onKeyDown={this.handleKeyDown}
           placeholder="New task..."
         />
         <button className="btn" onClick={this.handleCreate}>

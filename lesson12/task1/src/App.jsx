@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { fetchTasks, createTask, updateTask, deleteTask } from './tasksApi';
 import CreateTask from './CreateTask';
-import TasksList from './TasksList';
+import Task from './Task';
 import './index.scss';
 
 class App extends Component {
@@ -82,6 +82,9 @@ class App extends Component {
   render() {
     const { tasks, loading, error } = this.state;
 
+    // Сортировка: сначала невыполненные, потом выполненные
+    const sortedTasks = [...tasks].sort((a, b) => a.done - b.done);
+
     if (loading) {
       return <div className="loading">Loading...</div>;
     }
@@ -102,7 +105,18 @@ class App extends Component {
         <h1 className="title">Todo List</h1>
         <main className="todo-list">
           <CreateTask onCreate={this.handleCreate} />
-          <TasksList tasks={tasks} onToggle={this.handleToggle} onDelete={this.handleDelete} />
+          <ul className="list">
+            {sortedTasks.map(task => (
+              <Task
+                key={task.id}
+                id={task.id}
+                text={task.text}
+                done={task.done}
+                onToggle={this.handleToggle}
+                onDelete={this.handleDelete}
+              />
+            ))}
+          </ul>
         </main>
       </div>
     );
